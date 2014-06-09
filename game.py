@@ -24,21 +24,35 @@ d_grey   = (  60,  60,  60)
 
 #Initialize some defaults
 customers = 0
-cash = 0
+cac = 0
+cash = 100000
 week = 1
+price = 100
+dm_spend = 10000
+advance_week = False
 
 #Initialize buttons
 button_list = []
 pressed = None
 
-mkt_button_up = button(80,15,(500,20),"Increase")
+next_week = button(80,15,(400,25),"Next Week")
+button_list.append(next_week)
+
+price_button_up = button(80,15,(400,100),"Increase")
+button_list.append(price_button_up)
+
+price_button_down = button(80,15,(500,100),"Decrease")
+button_list.append(price_button_down)
+
+mkt_button_up = button(80,15,(400,125),"Increase")
 button_list.append(mkt_button_up)
 
-mkt_button_down = button(80,15,(500,40),"Decrease")
+mkt_button_down = button(80,15,(500,125),"Decrease")
 button_list.append(mkt_button_down)
 
-next_week = button(80,15,(500,60),"Next Week")
-button_list.append(next_week)
+
+
+
 
 
 
@@ -55,25 +69,45 @@ while done==False:
         if event.type == QUIT: # If user clicked close
             done=True # Flag that we are done so we exit this loop
     if event.type == MOUSEBUTTONDOWN:
-        if event.button == 1:
+        if event.button == 1 and pressed == None:
             for button in button_list:
                 if button.rect.collidepoint(event.pos):
                     pressed = button
+    elif event.type == MOUSEBUTTONUP:
+        pressed = None #Reset button status when user releases mouse button
+
 
 
     # ALL EVENT PROCESSING SHOULD GO ABOVE THIS COMMENT
 
     # ALL GAME LOGIC SHOULD GO BELOW THIS COMMENT
 
-    if pressed == mkt_button_up:
-        customers += 1
-    elif pressed == mkt_button_down:
-        customers -= 1
-    elif pressed == next_week:
+    if pressed <> None:
+        if pressed == next_week:
+            advance_week = True
+        elif pressed == mkt_button_up:
+            dm_spend += 1000
+        elif pressed == mkt_button_down and dm_spend >= 1000:
+            dm_spend -= 1000
+        elif pressed == price_button_up:
+            price += 1
+        elif pressed == price_button_down and price >= 2:
+            price -= 1
+
+        pressed = False #Pressed needs to be reset with MOUSEBUTTONUP before we will react to any more button events
+
+
+    # ADVANCE WEEK, CALCULATE NEW VALUES
+    if advance_week == True:
+        cac = ((price * price * price) / 5000) + (price) + 400
+        customers += dm_spend / cac
+        cash += (customers * price) - (dm_spend)
+
         week += 1
+        advance_week = False
 
-    pressed = None #reset button status
 
+    # END OF ADVANCE WEEK CALCULATIONS
 
 
     # END OF GAME LOGIC
@@ -89,13 +123,19 @@ while done==False:
     cash_text = font.render("Cash = $" + str(cash),True,black)
     customer_text = font.render("Customers = " + str(customers),True,black)
     week_text = font.render("Week = "+str(week),True,black)
+    price_text = font.render("Price = $"+str(price),True,black)
+    dm_spend_text = font.render("Direct marketing spend = $"+str(dm_spend),True,black)
+    cac_text = font.render("CAC = $"+str(cac),True,black)
 
     fps_text = font.render("FPS = "+str(clock.get_fps()),True,black)
 
     #Write all text to screen
-    screen.blit(cash_text, (20, 20))
-    screen.blit(customer_text, (20, 40))
-    screen.blit(week_text, (20, 60))
+    screen.blit(week_text, (25, 25))
+    screen.blit(cash_text, (25, 50))
+    screen.blit(customer_text, (25, 75))
+    screen.blit(price_text, (25, 100))
+    screen.blit(dm_spend_text, (25, 125))
+    screen.blit(cac_text, (25, 150))
 
     screen.blit(fps_text, (900, 700))
 
