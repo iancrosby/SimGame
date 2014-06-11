@@ -3,16 +3,15 @@ __author__ = 'iwcrosby'
 import pygame
 from pygame.locals import *
 from functions import *
+from sales_screen import *
 pygame.init()
 
 #Setting up some initialization stuff
 done=False
 scr_size = [1024,768]
 screen=pygame.display.set_mode(scr_size)
-pygame.display.set_caption("SquadGame")
+pygame.display.set_caption("SimGame")
 clock=pygame.time.Clock()
-
-clock = pygame.time.Clock()
 
 #Define colours for easy use later
 black    = (   0,   0,   0)
@@ -35,19 +34,22 @@ advance_week = False
 button_list = []
 pressed = None
 
-next_week = button(80,15,(400,25),"Next Week")
+sales_btn = Button(120,15,(25,25),"Sales")
+button_list.append(sales_btn)
+
+next_week = Button(120,15,(400,75),"Next Week")
 button_list.append(next_week)
 
-price_button_up = button(80,15,(400,100),"Increase")
+price_button_up = Button(120,15,(400,150),"Increase")
 button_list.append(price_button_up)
 
-price_button_down = button(80,15,(500,100),"Decrease")
+price_button_down = Button(120,15,(550,150),"Decrease")
 button_list.append(price_button_down)
 
-mkt_button_up = button(80,15,(400,125),"Increase")
+mkt_button_up = Button(120,15,(400,175),"Increase")
 button_list.append(mkt_button_up)
 
-mkt_button_down = button(80,15,(500,125),"Decrease")
+mkt_button_down = Button(120,15,(550,175),"Decrease")
 button_list.append(mkt_button_down)
 
 
@@ -82,9 +84,13 @@ while done==False:
 
     # ALL GAME LOGIC SHOULD GO BELOW THIS COMMENT
 
+
+    #Button logic goes here
     if pressed <> None:
         if pressed == next_week:
             advance_week = True
+        elif pressed == sales_btn:
+            sales_screen(screen)
         elif pressed == mkt_button_up:
             dm_spend += 1000
         elif pressed == mkt_button_down and dm_spend >= 1000:
@@ -93,8 +99,8 @@ while done==False:
             price += 1
         elif pressed == price_button_down and price >= 2:
             price -= 1
-
         pressed = False #Pressed needs to be reset with MOUSEBUTTONUP before we will react to any more button events
+    #End of button logic
 
 
     # ADVANCE WEEK, CALCULATE NEW VALUES
@@ -116,8 +122,9 @@ while done==False:
     #ALL GRAPHICS RENDERING OCCURS HERE
     screen.fill(white)
 
+
     #Set the font to draw text in
-    font = pygame.font.Font(None, 25)
+    font = pygame.font.Font(None, 20)
 
     #Define what text should be written
     cash_text = font.render("Cash = $" + str(cash),True,black)
@@ -130,18 +137,19 @@ while done==False:
     fps_text = font.render("FPS = "+str(clock.get_fps()),True,black)
 
     #Write all text to screen
-    screen.blit(week_text, (25, 25))
-    screen.blit(cash_text, (25, 50))
-    screen.blit(customer_text, (25, 75))
-    screen.blit(price_text, (25, 100))
-    screen.blit(dm_spend_text, (25, 125))
-    screen.blit(cac_text, (25, 150))
+    screen.blit(week_text, (25, 75))
+    screen.blit(cash_text, (25, 100))
+    screen.blit(customer_text, (25, 125))
+    screen.blit(price_text, (25, 150))
+    screen.blit(dm_spend_text, (25, 175))
+    screen.blit(cac_text, (25, 200))
 
     screen.blit(fps_text, (900, 700))
 
-    #Write all button labels to screen
+    #Draw button boxes and labels to screen
     for button in button_list:
-        screen.blit(font.render(button.label,True,black), (button.rect.x, button.rect.y))
+        screen.blit(font.render(button.label,True,black), (button.rect.x+5,button.rect.y+1))
+        pygame.draw.rect(screen, black, button.rect, 1)
 
 
     pygame.display.flip()
