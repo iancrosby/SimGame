@@ -7,7 +7,9 @@
     <file path="/game.py" changelist="6ac0f1b2-31d5-4f03-b1b0-68175cb0977a" time="1402448009200" ignored="false" />
     <file path="/functions.py" changelist="6ac0f1b2-31d5-4f03-b1b0-68175cb0977a" time="1402446903847" ignored="false" />
     <file path="/Dummy.txt" changelist="6ac0f1b2-31d5-4f03-b1b0-68175cb0977a" time="1402370668957" ignored="false" />
-    <file path="/sales_screen.py" changelist="6ac0f1b2-31d5-4f03-b1b0-68175cb0977a" time="1402447320733" ignored="false" />
+    <file path="/sales_screen.py" changelist="6ac0f1b2-31d5-4f03-b1b0-68175cb0977a" time="1402550907376" ignored="false" />
+    <file path="/template_screen.py" changelist="6ac0f1b2-31d5-4f03-b1b0-68175cb0977a" time="1402550495179" ignored="false" />
+    <file path="/pricing_screen.py" changelist="6ac0f1b2-31d5-4f03-b1b0-68175cb0977a" time="1402552880459" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +38,7 @@
       <file leaf-file-name="sales_screen.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sales_screen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="47" selection-start="913" selection-end="913" vertical-scroll-proportion="0.0">
+            <state line="71" column="20" selection-start="2110" selection-end="2110" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#25#38#0" expanded="true" />
               </folding>
@@ -44,10 +46,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="pricing_screen.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pricing_screen.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="121" column="37" selection-start="3720" selection-end="3720" vertical-scroll-proportion="0.8313253">
+              <folding>
+                <element signature="e#25#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="template_screen.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/template_screen.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="84" column="0" selection-start="0" selection-end="2830" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#25#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="game.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="0" selection-start="688" selection-end="688" vertical-scroll-proportion="0.31325302">
+            <state line="144" column="36" selection-start="3087" selection-end="3866" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#25#38#0" expanded="true" />
               </folding>
@@ -66,8 +90,10 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/functions.py" />
-        <option value="$PROJECT_DIR$/sales_screen.py" />
         <option value="$PROJECT_DIR$/game.py" />
+        <option value="$PROJECT_DIR$/template_screen.py" />
+        <option value="$PROJECT_DIR$/sales_screen.py" />
+        <option value="$PROJECT_DIR$/pricing_screen.py" />
       </list>
     </option>
   </component>
@@ -257,14 +283,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="19" y="22" width="1280" height="774" extended-state="6" />
+    <frame x="19" y="22" width="1280" height="774" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27147487" sideWeight="0.67737" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27147487" sideWeight="0.67737" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39908257" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -413,7 +439,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sales_screen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="47" selection-start="913" selection-end="913" vertical-scroll-proportion="0.0">
+        <state line="71" column="20" selection-start="2110" selection-end="2110" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#25#38#0" expanded="true" />
           </folding>
@@ -422,7 +448,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="688" selection-end="688" vertical-scroll-proportion="0.31325302">
+        <state line="144" column="36" selection-start="3087" selection-end="3866" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#25#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template_screen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="0" selection-start="0" selection-end="2830" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#25#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pricing_screen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="121" column="37" selection-start="3720" selection-end="3720" vertical-scroll-proportion="0.8313253">
           <folding>
             <element signature="e#25#38#0" expanded="true" />
           </folding>

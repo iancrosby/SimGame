@@ -3,10 +3,9 @@ __author__ = 'iwcrosby'
 import pygame
 from pygame.locals import *
 from functions import *
-from pricing_screen import *
 
 
-def sales_screen(screen):
+def template_screen(screen):
     #Initialize engine stuff
     done=False
     pygame.display.set_caption("SimGame")
@@ -27,17 +26,17 @@ def sales_screen(screen):
     back = Button(120,15,(25,25),"Back")
     button_list.append(back)
 
-    sales_team = Button(120,15,(25,50),"Sales Team")
-    button_list.append(sales_team)
+    button1 = Button(120,15,(25,50),"button1")
+    button_list.append(button1)
 
-    advertising = Button(120,15,(25,75),"Advertising")
-    button_list.append(advertising)
+    button2 = Button(120,15,(25,75),"button2")
+    button_list.append(button2)
 
-    pricing = Button(120,15,(25,100),"Pricing")
-    button_list.append(pricing)
+    button3 = Button(120,15,(25,100),"button3")
+    button_list.append(button3)
 
-    content = Button(120,15,(25,125),"Content")
-    button_list.append(content)
+    button4 = Button(120,15,(25,125),"button4")
+    button_list.append(button4)
     #End of button initialization
 
 
@@ -66,17 +65,17 @@ def sales_screen(screen):
         if pressed <> None:
             if pressed == back:
                 done=True
-            elif pressed == sales_team:
+            elif pressed == button1:
                 pass
-            elif pressed == advertising:
+            elif pressed == button2:
                 pass
-            elif pressed == pricing:
-                pricing_screen(screen)
-            elif pressed == content:
+            elif pressed == button3:
+                pass
+            elif pressed == button4:
                 pass
 
             pressed = False #Pressed needs to be reset with MOUSEBUTTONUP before we will react to any more button events
-        #End of button logic
+            #End of button logic
 
 
 
