@@ -6,6 +6,9 @@ from functions import *
 from sales_screen import *
 pygame.init()
 
+import var
+print var.x
+
 #Setting up some initialization stuff
 done=False
 scr_size = [1024,768]

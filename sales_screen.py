@@ -6,6 +6,8 @@ from functions import *
 from pricing_screen import *
 from advertising_screen import *
 
+import var
+var.x += 2
 
 def sales_screen(screen):
     #Initialize engine stuff
