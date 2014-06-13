@@ -3,11 +3,9 @@ __author__ = 'iwcrosby'
 import pygame
 from pygame.locals import *
 from functions import *
-from pricing_screen import *
-from advertising_screen import *
 
 
-def sales_screen(screen):
+def advertising_screen(screen):
     #Initialize engine stuff
     done=False
     pygame.display.set_caption("SimGame")
@@ -21,6 +19,11 @@ def sales_screen(screen):
     blue     = (   0,   0, 255)
     d_grey   = (  60,  60,  60)
 
+    #Initialize variables
+    adwords_spend = 20000
+    rd_spend = 5000
+
+
     #Initialize buttons
     button_list = []
     pressed = None
@@ -28,25 +31,23 @@ def sales_screen(screen):
     back = Button(120,15,(25,25),"Back")
     button_list.append(back)
 
-    sales_team = Button(120,15,(25,50),"Sales Team")
-    button_list.append(sales_team)
+    adwords_up = Button(30,15,(200,75),"  +  ")
+    button_list.append(adwords_up)
 
-    advertising = Button(120,15,(25,75),"Advertising")
-    button_list.append(advertising)
+    adwords_down = Button(30,15,(230,75),"  -  ")
+    button_list.append(adwords_down)
 
-    pricing = Button(120,15,(25,100),"Pricing")
-    button_list.append(pricing)
+    rd_up = Button(30,15,(200,100),"  +  ")
+    button_list.append(rd_up)
 
-    content = Button(120,15,(25,125),"Content")
-    button_list.append(content)
+    rd_down = Button(30,15,(230,100),"  -  ")
+    button_list.append(rd_down)
     #End of button initialization
 
 
     # -------- Main Program Loop -----------
     while done==False:
         # ALL EVENT PROCESSING SHOULD GO BELOW THIS COMMENT
-
-        #Reset to basic state
 
 
         for event in pygame.event.get(): # User did something
@@ -67,17 +68,17 @@ def sales_screen(screen):
         if pressed <> None:
             if pressed == back:
                 done=True
-            elif pressed == sales_team:
-                pass
-            elif pressed == advertising:
-                advertising_screen(screen)
-            elif pressed == pricing:
-                pricing_screen(screen)
-            elif pressed == content:
-                pass
+            elif pressed == adwords_up:
+                adwords_spend += 5000
+            elif pressed == adwords_down and adwords_spend >= 5000:
+                adwords_spend -= 5000
+            elif pressed == rd_up:
+                rd_spend += 5000
+            elif pressed == rd_down and rd_spend >= 5000:
+                rd_spend -= 5000
 
             pressed = False #Pressed needs to be reset with MOUSEBUTTONUP before we will react to any more button events
-        #End of button logic
+            #End of button logic
 
 
 
@@ -92,6 +93,18 @@ def sales_screen(screen):
             screen.blit(font.render(button.label,True,black), (button.rect.x+5,button.rect.y+1))
             pygame.draw.rect(screen, black, button.rect, 1)
 
+        #Define what text should be written
+        title_text = font.render("Advertising projects",True,black)
+        adwords_text = font.render("Adwords spend = $" + str(adwords_spend),True,black)
+        rd_text = font.render("R&D spend = $"+str(rd_spend),True,black)
+
+        #Write all text to screen
+        screen.blit(title_text, (25, 50))
+        screen.blit(adwords_text, (25, 75))
+        screen.blit(rd_text, (25, 100))
+
+
 
         # ALL CODE TO DRAW SHOULD GO ABOVE THIS COMMENT
         pygame.display.flip()
+

@@ -19,6 +19,10 @@ def template_screen(screen):
     blue     = (   0,   0, 255)
     d_grey   = (  60,  60,  60)
 
+    #Initialize variables
+    var1 = 100
+    var2 = 15000
+
     #Initialize buttons
     button_list = []
     pressed = None
@@ -26,16 +30,16 @@ def template_screen(screen):
     back = Button(120,15,(25,25),"Back")
     button_list.append(back)
 
-    button1 = Button(120,15,(25,50),"button1")
+    button1 = Button(30,15,(200,75),"  +  ")
     button_list.append(button1)
 
-    button2 = Button(120,15,(25,75),"button2")
+    button2 = Button(30,15,(230,75),"  -  ")
     button_list.append(button2)
 
-    button3 = Button(120,15,(25,100),"button3")
+    button3 = Button(30,15,(200,100),"  +  ")
     button_list.append(button3)
 
-    button4 = Button(120,15,(25,125),"button4")
+    button4 = Button(30,15,(230,100),"  -  ")
     button_list.append(button4)
     #End of button initialization
 
@@ -43,9 +47,6 @@ def template_screen(screen):
     # -------- Main Program Loop -----------
     while done==False:
         # ALL EVENT PROCESSING SHOULD GO BELOW THIS COMMENT
-
-        #Reset to basic state
-
 
         for event in pygame.event.get(): # User did something
             if event.type == QUIT: # If user clicked close
@@ -89,6 +90,17 @@ def template_screen(screen):
         for button in button_list:
             screen.blit(font.render(button.label,True,black), (button.rect.x+5,button.rect.y+1))
             pygame.draw.rect(screen, black, button.rect, 1)
+
+        #Define what text should be written
+        title_text = font.render("Title",True,black)
+        var1_text = font.render("Var1 = $" + str(5),True,black)
+        var2_text = font.render("Var2 = $"+str(5),True,black)
+
+        #Write all text to screen
+        screen.blit(title_text, (25, 50))
+        screen.blit(var1_text, (25, 75))
+        screen.blit(var2_text, (25, 100))
+
 
 
         # ALL CODE TO DRAW SHOULD GO ABOVE THIS COMMENT

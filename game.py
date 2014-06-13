@@ -30,6 +30,7 @@ price = 100
 dm_spend = 10000
 advance_week = False
 
+
 #Initialize buttons
 button_list = []
 pressed = None
