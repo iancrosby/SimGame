@@ -42,6 +42,48 @@ def sales_screen(screen):
     button_list.append(content)
     #End of button initialization
 
+    #Calculate stats
+
+    lost_leads = 0.0
+    trials = 0.0
+    lost_trials = 0.0
+    all_customers = 0.0
+    customers = 0.0
+    churns = 0.0
+    lead_trial_rate = 0.0
+    trial_cust_rate = 0.0
+    churn_rate = 0.0
+
+
+    for cust in var.customer_list:
+        if cust.status == 1:
+            if cust.lost_lead_date == var.month - 1:
+                lost_leads += 1
+        elif cust.status == 2:
+            if cust.trial_date == var.month - 1:
+                trials += 1
+        elif cust.status == 3:
+            if cust.lost_trial_date == var.month - 1:
+                lost_trials += 1
+        elif cust.status == 4:
+            all_customers += 1
+            if cust.cust_date == var.month - 1:
+                customers += 1
+        elif cust.status == 5:
+            if cust.churn_date == var.month - 1:
+                churns += 1
+
+    if trials > 0:
+        lead_trial_rate = trials / (lost_leads + trials)
+
+    if customers > 0:
+        trial_cust_rate = customers / (customers + lost_trials)
+
+    if churns > 0:
+        churn_rate = churns / all_customers
+
+
+
 
     # -------- Main Program Loop -----------
     while done==False:
@@ -94,10 +136,15 @@ def sales_screen(screen):
             pygame.draw.rect(screen, black, button.rect, 1)
 
         #Define what text should be written
-        #cash_text = font.render("Cash = $" + str(cash),True,black)
+        lead_trial_text = font.render("Lead-Trial conversion = " + str(lead_trial_rate*100)[:4] + "%",True,black)
+        trial_cust_text = font.render("Trial-Cust conversion = " + str(trial_cust_rate*100)[:4] + "%",True,black)
+        churn_text = font.render("Churn = " + str(churn_rate*100)[:4] + "%",True,black)
 
         #Write all text to screen
-        #screen.blit(week_text, (25, 75))
+        screen.blit(lead_trial_text, (300, 50))
+        screen.blit(trial_cust_text, (300, 75))
+        screen.blit(churn_text, (300, 100))
+
 
 
         # ALL CODE TO DRAW SHOULD GO ABOVE THIS COMMENT

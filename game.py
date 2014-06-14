@@ -145,7 +145,7 @@ while done==False:
 
 
         #Add new prospects
-        cpl = ((var.price1 * var.price1) / 500) + (var.price1) + 200
+        cpl = ((var.price1 * var.price1) / 500) + 50
         new_leads = var.adwords_spend / cpl
         add_customers = new_leads
         while add_customers > 0:
@@ -183,7 +183,7 @@ while done==False:
     churns_text = font.render("Churns = "+str(churns),True,black)
     all_entries_text = font.render("All entries = "+str(len(var.customer_list)),True,black)
 
-    fps_text = font.render("FPS = "+str(clock.get_fps()),True,black)
+    fps_text = font.render("FPS = "+str(clock.get_fps())[:4],True,black)
 
     #Write all text to screen
     screen.blit(month_text, (25, 75))

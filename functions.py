@@ -19,7 +19,7 @@ class Customer:
         self.status = 0
         x = randrange(0,100)
         self.size = x * x * 5
-        self.price_sens = (x * 10) / randrange(1,3)
+        self.price_sens = (x * 3.5) / randrange(1,3)
         var.customer_list.append(self)
         self.signup_date = var.month
 
@@ -46,24 +46,31 @@ class Customer:
                 price = var.price3
         else:
             self.status = 1
+            self.lost_lead_date = var.month
 
         if price < price_sens:
             self.price = price
             self.status = 2
+            self.trial_date = var.month
+
         else:
             self.status = 1
+            self.lost_lead_date = var.month
 
     def conv_trial(self):
 
         x = randrange(0,10)
         if x >= 4:
             self.status = 4
+            self.cust_date = var.month
         else:
             self.status = 3
+            self.lost_trial_date = var.month
 
     def churn(self):
 
         x = randrange(0,100)
         if x >= 98:
             self.status = 5
+            self.churn_date = var.month
 
