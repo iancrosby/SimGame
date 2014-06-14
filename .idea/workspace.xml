@@ -2,21 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ac0f1b2-31d5-4f03-b1b0-68175cb0977a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/var.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/advertising_screen.py" afterPath="$PROJECT_DIR$/advertising_screen.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/game.py" afterPath="$PROJECT_DIR$/game.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pricing_screen.py" afterPath="$PROJECT_DIR$/pricing_screen.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sales_screen.py" afterPath="$PROJECT_DIR$/sales_screen.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var.py" afterPath="$PROJECT_DIR$/var.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SimGame.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/game.py" changelist="6ac0f1b2-31d5-4f03-b1b0-68175cb0977a" time="1402638517833" ignored="false" />
+    <file path="/game.py" changelist="6ac0f1b2-31d5-4f03-b1b0-68175cb0977a" time="1402722841643" ignored="false" />
     <file path="/functions.py" changelist="6ac0f1b2-31d5-4f03-b1b0-68175cb0977a" time="1402446903847" ignored="false" />
-    <file path="/Dummy.txt" changelist="6ac0f1b2-31d5-4f03-b1b0-68175cb0977a" time="1402638298081" ignored="false" />
-    <file path="/sales_screen.py" changelist="6ac0f1b2-31d5-4f03-b1b0-68175cb0977a" time="1402638569721" ignored="false" />
+    <file path="/Dummy.txt" changelist="6ac0f1b2-31d5-4f03-b1b0-68175cb0977a" time="1402717073202" ignored="false" />
+    <file path="/sales_screen.py" changelist="6ac0f1b2-31d5-4f03-b1b0-68175cb0977a" time="1402722603280" ignored="false" />
     <file path="/template_screen.py" changelist="6ac0f1b2-31d5-4f03-b1b0-68175cb0977a" time="1402635338765" ignored="false" />
-    <file path="/pricing_screen.py" changelist="6ac0f1b2-31d5-4f03-b1b0-68175cb0977a" time="1402552880459" ignored="false" />
-    <file path="/advertising_screen.py" changelist="6ac0f1b2-31d5-4f03-b1b0-68175cb0977a" time="1402637942305" ignored="false" />
-    <file path="/var.py" changelist="6ac0f1b2-31d5-4f03-b1b0-68175cb0977a" time="1402638328476" ignored="false" />
+    <file path="/pricing_screen.py" changelist="6ac0f1b2-31d5-4f03-b1b0-68175cb0977a" time="1402717623077" ignored="false" />
+    <file path="/advertising_screen.py" changelist="6ac0f1b2-31d5-4f03-b1b0-68175cb0977a" time="1402717743641" ignored="false" />
+    <file path="/var.py" changelist="6ac0f1b2-31d5-4f03-b1b0-68175cb0977a" time="1402717696633" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,10 +44,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sales_screen.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="sales_screen.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sales_screen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="10" selection-start="175" selection-end="175" vertical-scroll-proportion="0.35433072">
+            <state line="56" column="27" selection-start="1483" selection-end="1483" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#25#38#0" expanded="true" />
               </folding>
@@ -56,8 +58,10 @@
       <file leaf-file-name="pricing_screen.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pricing_screen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="18" selection-start="539" selection-end="539" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="20" column="0" selection-start="479" selection-end="479" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#25#38#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -65,7 +69,7 @@
       <file leaf-file-name="advertising_screen.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/advertising_screen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="0" selection-start="2334" selection-end="2334" vertical-scroll-proportion="0.0">
+            <state line="21" column="0" selection-start="484" selection-end="484" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#25#38#0" expanded="true" />
               </folding>
@@ -76,7 +80,7 @@
       <file leaf-file-name="var.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/var.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="3" selection-start="28" selection-end="28" vertical-scroll-proportion="0.0">
+            <state line="14" column="0" selection-start="163" selection-end="176" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -91,11 +95,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="game.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="10" selection-start="143" selection-end="143" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="75" column="23" selection-start="1567" selection-end="1567" vertical-scroll-proportion="0.4225352">
+              <folding>
+                <element signature="e#25#38#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -119,12 +125,12 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/functions.py" />
-        <option value="$PROJECT_DIR$/pricing_screen.py" />
         <option value="$PROJECT_DIR$/template_screen.py" />
-        <option value="$PROJECT_DIR$/advertising_screen.py" />
+        <option value="$PROJECT_DIR$/pricing_screen.py" />
         <option value="$PROJECT_DIR$/var.py" />
-        <option value="$PROJECT_DIR$/game.py" />
+        <option value="$PROJECT_DIR$/advertising_screen.py" />
         <option value="$PROJECT_DIR$/sales_screen.py" />
+        <option value="$PROJECT_DIR$/game.py" />
       </list>
     </option>
   </component>
@@ -185,12 +191,13 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
-    <property name="restartRequiresConfirmation" value="true" />
+    <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/game.py" />
-    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -320,11 +327,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28606158" sideWeight="0.67835367" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29092383" sideWeight="0.67835367" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39786586" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277439" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32164633" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32164633" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -396,14 +403,18 @@
     <entry file="file://$PROJECT_DIR$/game.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="21" selection-start="176" selection-end="176" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="e#25#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/game.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="16" selection-start="617" selection-end="617" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="e#25#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -417,7 +428,9 @@
     <entry file="file://$PROJECT_DIR$/game.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="16" selection-start="617" selection-end="617" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="e#25#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -431,7 +444,9 @@
     <entry file="file://$PROJECT_DIR$/game.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="60" column="20" selection-start="1386" selection-end="1386" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="e#25#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -468,21 +483,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pricing_screen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="18" selection-start="539" selection-end="539" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/var.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="3" selection-start="28" selection-end="28" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="20" column="0" selection-start="479" selection-end="479" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#25#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/advertising_screen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="0" selection-start="2334" selection-end="2334" vertical-scroll-proportion="0.0">
+        <state line="21" column="0" selection-start="484" selection-end="484" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#25#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/var.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="163" selection-end="176" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sales_screen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="27" selection-start="1483" selection-end="1483" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#25#38#0" expanded="true" />
           </folding>
@@ -491,14 +517,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="10" selection-start="143" selection-end="143" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sales_screen.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="10" selection-start="175" selection-end="175" vertical-scroll-proportion="0.35433072">
+        <state line="75" column="23" selection-start="1567" selection-end="1567" vertical-scroll-proportion="0.4225352">
           <folding>
             <element signature="e#25#38#0" expanded="true" />
           </folding>

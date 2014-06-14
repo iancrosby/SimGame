@@ -3,7 +3,7 @@ __author__ = 'iwcrosby'
 import pygame
 from pygame.locals import *
 from functions import *
-
+import var
 
 def pricing_screen(screen):
     #Initialize engine stuff
@@ -18,16 +18,6 @@ def pricing_screen(screen):
     red      = ( 255,   0,   0)
     blue     = (   0,   0, 255)
     d_grey   = (  60,  60,  60)
-
-    #Initialize pricing variables
-    price1 = 100
-    limit1 = 15000
-
-    price2 = 200
-    limit2 = 30000
-
-    price3 = 300
-    limit3 = 75000
 
     #Initialize buttons
     button_list = []
@@ -99,30 +89,30 @@ def pricing_screen(screen):
         if pressed <> None:
             if pressed == back:
                 done=True
-            elif pressed == price1_up and price1 <= price2-10:
-                price1 += 5
-            elif pressed == price1_down and price1 >= 5:
-                price1 -= 5
-            elif pressed == limit1_up and limit1 <= limit2-2000:
-                limit1 += 1000
-            elif pressed ==limit1_down and limit1 >= 1000:
-                limit1 -= 1000
-            elif pressed == price2_up and price2 <= price3-10:
-                price2 += 5
-            elif pressed == price2_down and price2 >= (price1+10):
-                price2 -= 5
-            elif pressed == limit2_up and limit2 <= limit3-10000:
-                limit2 += 1000
-            elif pressed ==limit2_down and limit2 >= limit1+2000:
-                limit2 -= 1000
+            elif pressed == price1_up and var.price1 <= var.price2-10:
+                var.price1 += 5
+            elif pressed == price1_down and var.price1 >= 5:
+                var.price1 -= 5
+            elif pressed == limit1_up and var.limit1 <= var.limit2-2000:
+                var.limit1 += 1000
+            elif pressed ==limit1_down and var.limit1 >= 1000:
+                var.limit1 -= 1000
+            elif pressed == price2_up and var.price2 <= var.price3-10:
+                var.price2 += 5
+            elif pressed == price2_down and var.price2 >= (var.price1+10):
+                var.price2 -= 5
+            elif pressed == limit2_up and var.limit2 <= var.limit3-10000:
+                var.limit2 += 1000
+            elif pressed ==limit2_down and var.limit2 >= var.limit1+2000:
+                var.limit2 -= 1000
             elif pressed == price3_up:
-                price3 += 5
-            elif pressed == price3_down and price3 >= price2+10:
-                price3 -= 5
+                var.price3 += 5
+            elif pressed == price3_down and var.price3 >= var.price2+10:
+                var.price3 -= 5
             elif pressed == limit3_up:
-                limit3 += 5000
-            elif pressed ==limit3_down and limit3 >= limit2+10000:
-                limit3 -= 5000
+                var.limit3 += 5000
+            elif pressed ==limit3_down and var.limit3 >= var.limit2+10000:
+                var.limit3 -= 5000
 
             pressed = False #Pressed needs to be reset with MOUSEBUTTONUP before we will react to any more button events
             #End of button logic
@@ -143,16 +133,16 @@ def pricing_screen(screen):
 
         #Define what text should be written
         package1_text = font.render("Starter package",True,black)
-        price1_text = font.render("Price = $" + str(price1),True,black)
-        limit1_text = font.render("Expense limit = $"+str(limit1),True,black)
+        price1_text = font.render("Price = $" + str(var.price1),True,black)
+        limit1_text = font.render("Expense limit = $"+str(var.limit1),True,black)
 
         package2_text = font.render("Team package",True,black)
-        price2_text = font.render("Price = $" + str(price2),True,black)
-        limit2_text = font.render("Expense limit = $"+str(limit2),True,black)
+        price2_text = font.render("Price = $" + str(var.price2),True,black)
+        limit2_text = font.render("Expense limit = $"+str(var.limit2),True,black)
 
         package3_text = font.render("Business package",True,black)
-        price3_text = font.render("Price = $" + str(price3),True,black)
-        limit3_text = font.render("Expense limit = $"+str(limit3),True,black)
+        price3_text = font.render("Price = $" + str(var.price3),True,black)
+        limit3_text = font.render("Expense limit = $"+str(var.limit3),True,black)
 
         #Write all text to screen
         screen.blit(package1_text, (25, 50))

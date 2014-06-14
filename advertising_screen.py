@@ -3,6 +3,7 @@ __author__ = 'iwcrosby'
 import pygame
 from pygame.locals import *
 from functions import *
+import var
 
 
 def advertising_screen(screen):
@@ -18,10 +19,6 @@ def advertising_screen(screen):
     red      = ( 255,   0,   0)
     blue     = (   0,   0, 255)
     d_grey   = (  60,  60,  60)
-
-    #Initialize variables
-    adwords_spend = 20000
-    rd_spend = 5000
 
 
     #Initialize buttons
@@ -69,13 +66,13 @@ def advertising_screen(screen):
             if pressed == back:
                 done=True
             elif pressed == adwords_up:
-                adwords_spend += 5000
-            elif pressed == adwords_down and adwords_spend >= 5000:
-                adwords_spend -= 5000
+                var.adwords_spend += 5000
+            elif pressed == adwords_down and var.adwords_spend >= 5000:
+                var.adwords_spend -= 5000
             elif pressed == rd_up:
-                rd_spend += 5000
-            elif pressed == rd_down and rd_spend >= 5000:
-                rd_spend -= 5000
+                var.rd_spend += 5000
+            elif pressed == rd_down and var.rd_spend >= 5000:
+                var.rd_spend -= 5000
 
             pressed = False #Pressed needs to be reset with MOUSEBUTTONUP before we will react to any more button events
             #End of button logic
@@ -95,8 +92,8 @@ def advertising_screen(screen):
 
         #Define what text should be written
         title_text = font.render("Advertising projects",True,black)
-        adwords_text = font.render("Adwords spend = $" + str(adwords_spend),True,black)
-        rd_text = font.render("R&D spend = $"+str(rd_spend),True,black)
+        adwords_text = font.render("Adwords spend = $" + str(var.adwords_spend),True,black)
+        rd_text = font.render("R&D spend = $"+str(var.rd_spend),True,black)
 
         #Write all text to screen
         screen.blit(title_text, (25, 50))

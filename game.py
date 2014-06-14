@@ -7,7 +7,6 @@ from sales_screen import *
 pygame.init()
 
 import var
-print var.x
 
 #Setting up some initialization stuff
 done=False
@@ -74,13 +73,13 @@ while done==False:
     for event in pygame.event.get(): # User did something
         if event.type == QUIT: # If user clicked close
             done=True # Flag that we are done so we exit this loop
-    if event.type == MOUSEBUTTONDOWN:
-        if event.button == 1 and pressed == None:
-            for button in button_list:
-                if button.rect.collidepoint(event.pos):
-                    pressed = button
-    elif event.type == MOUSEBUTTONUP:
-        pressed = None #Reset button status when user releases mouse button
+        elif event.type == MOUSEBUTTONDOWN:
+            if event.button == 1 and pressed == None:
+                for button in button_list:
+                    if button.rect.collidepoint(event.pos):
+                        pressed = button
+        elif event.type == MOUSEBUTTONUP:
+            pressed = None #Reset button status when user releases mouse button
 
 
 
@@ -96,22 +95,22 @@ while done==False:
         elif pressed == sales_btn:
             sales_screen(screen)
         elif pressed == mkt_button_up:
-            dm_spend += 1000
+            pass
         elif pressed == mkt_button_down and dm_spend >= 1000:
-            dm_spend -= 1000
+            pass
         elif pressed == price_button_up:
-            price += 1
+            pass
         elif pressed == price_button_down and price >= 2:
-            price -= 1
+            pass
         pressed = False #Pressed needs to be reset with MOUSEBUTTONUP before we will react to any more button events
     #End of button logic
 
 
     # ADVANCE WEEK, CALCULATE NEW VALUES
     if advance_week == True:
-        cac = ((price * price * price) / 5000) + (price) + 400
-        customers += dm_spend / cac
-        cash += (customers * price) - (dm_spend)
+        cac = ((var.price1 * var.price1 * var.price1) / 5000) + (var.price1) + 400
+        customers += var.adwords_spend / cac
+        cash += (customers * var.price1) - (var.adwords_spend)
 
         week += 1
         advance_week = False
@@ -135,7 +134,7 @@ while done==False:
     customer_text = font.render("Customers = " + str(customers),True,black)
     week_text = font.render("Week = "+str(week),True,black)
     price_text = font.render("Price = $"+str(price),True,black)
-    dm_spend_text = font.render("Direct marketing spend = $"+str(dm_spend),True,black)
+    dm_spend_text = font.render("Direct marketing spend = $"+str(var.adwords_spend+var.rd_spend),True,black)
     cac_text = font.render("CAC = $"+str(cac),True,black)
 
     fps_text = font.render("FPS = "+str(clock.get_fps()),True,black)

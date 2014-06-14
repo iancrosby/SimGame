@@ -7,7 +7,6 @@ from pricing_screen import *
 from advertising_screen import *
 
 import var
-var.x += 2
 
 def sales_screen(screen):
     #Initialize engine stuff
@@ -54,7 +53,7 @@ def sales_screen(screen):
         for event in pygame.event.get(): # User did something
             if event.type == QUIT: # If user clicked close
                 done=True # Flag that we are done so we exit this loop
-            if event.type == MOUSEBUTTONDOWN:
+            elif event.type == MOUSEBUTTONDOWN:
                 if event.button == 1 and pressed == None:
                     for button in button_list:
                         if button.rect.collidepoint(event.pos):
