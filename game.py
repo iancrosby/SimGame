@@ -24,13 +24,15 @@ blue     = (   0,   0, 255)
 d_grey   = (  60,  60,  60)
 
 #Initialize some defaults
+cpl = 0
+advance_month = False
+
+new_leads = 0
+lost_prospects = 0
+trials = 0
+lost_trials = 0
 customers = 0
-cac = 0
-cash = 100000
-week = 1
-price = 100
-dm_spend = 10000
-advance_week = False
+churns = 0
 
 
 #Initialize buttons
@@ -40,8 +42,8 @@ pressed = None
 sales_btn = Button(120,15,(25,25),"Sales")
 button_list.append(sales_btn)
 
-next_week = Button(120,15,(400,75),"Next Week")
-button_list.append(next_week)
+next_month = Button(120,15,(400,75),"Next Month")
+button_list.append(next_month)
 
 price_button_up = Button(120,15,(400,150),"Increase")
 button_list.append(price_button_up)
@@ -90,8 +92,8 @@ while done==False:
 
     #Button logic goes here
     if pressed <> None:
-        if pressed == next_week:
-            advance_week = True
+        if pressed == next_month:
+            advance_month = True
         elif pressed == sales_btn:
             sales_screen(screen)
         elif pressed == mkt_button_up:
@@ -106,17 +108,57 @@ while done==False:
     #End of button logic
 
 
-    # ADVANCE WEEK, CALCULATE NEW VALUES
-    if advance_week == True:
-        cac = ((var.price1 * var.price1 * var.price1) / 5000) + (var.price1) + 400
-        customers += var.adwords_spend / cac
-        cash += (customers * var.price1) - (var.adwords_spend)
+    # ADVANCE MONTH, CALCULATE NEW VALUES
+    if advance_month == True:
 
-        week += 1
-        advance_week = False
+        #Existing customers change statuses
+        for cust in var.customer_list:
+            #Convert prospects
+            if cust.status == 0:
+                cust.conv_prospect()
+                if cust.status == 1:
+                    lost_prospects += 1
+                elif cust.status == 2:
+                    trials += 1
+                else:
+                    raise Exception
+
+            #convert trials
+            elif cust.status == 2:
+                cust.conv_trial()
+                if cust.status == 3:
+                    lost_trials += 1
+                    trials -= 1
+                elif cust.status == 4:
+                    customers += 1
+                    trials -= 1
+                else:
+                    raise Exception
+
+            elif cust.status == 4:
+                cust.churn()
+                if cust.status == 5:
+                    churns += 1
+                    customers -= 1
+                else:
+                    var.cash += cust.price
 
 
-    # END OF ADVANCE WEEK CALCULATIONS
+        #Add new prospects
+        cpl = ((var.price1 * var.price1) / 500) + (var.price1) + 200
+        new_leads = var.adwords_spend / cpl
+        add_customers = new_leads
+        while add_customers > 0:
+            Customer()
+            add_customers -= 1
+
+        var.cash -= var.adwords_spend + var.rd_spend
+
+        var.month += 1
+        advance_month = False
+
+
+    # END OF ADVANCE MONTH CALCULATIONS
 
 
     # END OF GAME LOGIC
@@ -130,22 +172,30 @@ while done==False:
     font = pygame.font.Font(None, 20)
 
     #Define what text should be written
-    cash_text = font.render("Cash = $" + str(cash),True,black)
+    cash_text = font.render("Cash = $" + str(var.cash),True,black)
     customer_text = font.render("Customers = " + str(customers),True,black)
-    week_text = font.render("Week = "+str(week),True,black)
-    price_text = font.render("Price = $"+str(price),True,black)
+    month_text = font.render("Month = "+str(var.month),True,black)
+    #price_text = font.render("Price = $"+str(price),True,black)
     dm_spend_text = font.render("Direct marketing spend = $"+str(var.adwords_spend+var.rd_spend),True,black)
-    cac_text = font.render("CAC = $"+str(cac),True,black)
+    cpl_text = font.render("Cost per lead = $"+str(cpl),True,black)
+    new_leads_text = font.render("New leads = "+str(new_leads),True,black)
+    trials_text = font.render("Trials = "+str(trials),True,black)
+    churns_text = font.render("Churns = "+str(churns),True,black)
+    all_entries_text = font.render("All entries = "+str(len(var.customer_list)),True,black)
 
     fps_text = font.render("FPS = "+str(clock.get_fps()),True,black)
 
     #Write all text to screen
-    screen.blit(week_text, (25, 75))
+    screen.blit(month_text, (25, 75))
     screen.blit(cash_text, (25, 100))
     screen.blit(customer_text, (25, 125))
-    screen.blit(price_text, (25, 150))
+    #screen.blit(price_text, (25, 150))
     screen.blit(dm_spend_text, (25, 175))
-    screen.blit(cac_text, (25, 200))
+    screen.blit(cpl_text, (25, 200))
+    screen.blit(new_leads_text, (25, 225))
+    screen.blit(trials_text, (25, 250))
+    screen.blit(churns_text, (25, 275))
+    screen.blit(all_entries_text, (25, 300))
 
     screen.blit(fps_text, (900, 700))
 

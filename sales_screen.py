@@ -93,6 +93,12 @@ def sales_screen(screen):
             screen.blit(font.render(button.label,True,black), (button.rect.x+5,button.rect.y+1))
             pygame.draw.rect(screen, black, button.rect, 1)
 
+        #Define what text should be written
+        #cash_text = font.render("Cash = $" + str(cash),True,black)
+
+        #Write all text to screen
+        #screen.blit(week_text, (25, 75))
+
 
         # ALL CODE TO DRAW SHOULD GO ABOVE THIS COMMENT
         pygame.display.flip()
